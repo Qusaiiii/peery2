@@ -4,11 +4,11 @@ var ChannelID = "496001281643773995";
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on('message', msg => {
-  if (msg.content === '1') {
-    msg.reply('#credit <@!324672376455299074> 5000');
-  }
-});
+client.on('message', message => {
+    if(message.content === '2'){
+        message.channel.send('#credit <@!324672376455299074> 5000')
+    }
+});;
 
 client.on('warn', console.warn);
 
