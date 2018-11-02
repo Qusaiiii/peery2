@@ -1,15 +1,6 @@
-var ServerID = "496001281643773993";// اي دي الروم
-var ChannelID = "496001281643773995";
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
-client.on('message', message => {
-    if(message.content === '2'){
-        message.channel.send('#credit <@!324672376455299074> 5000')
-    }
-});;
-
+const prefix = '!';
 client.on('warn', console.warn);
 
 client.on('error', console.error);
@@ -25,12 +16,12 @@ client.on('reconnecting', () => console.log('PROBOT credits miner is reconnectin
 
 function timerFunc() {
     client.on('message', msg => {
-        client.guilds.get(ServerID).channels.get(ChannelID).send(Math.random().toString(36).substring(7))
+        client.channels.find('spam').send(Math.random().toString(36).substring(7))
 
 
     });
 }
 
-var timer = setTimeout(timerFunc, 1000);
 
+var timer = setTimeout(timerFunc, 1000);
 client.login(process.env.BOT_TOKEN); 
